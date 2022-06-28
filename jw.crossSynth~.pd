@@ -1,0 +1,27 @@
+#N canvas 495 25 677 360 12;
+#X obj 414 136 cnv 10 155 11 empty empty sig1 0 2 0 8 #e0e0e0 #404040
+0;
+#X obj 415 181 cnv 10 154 11 empty empty xConv\ out~ 0 2 0 8 #e0e0e0
+#404040 0;
+#X floatatom 532 161 5 0 100 0 - #0-setComp #0-comp, f 5;
+#X obj 414 145 cnv 15 155 15 empty empty X-Convolve 38 5 0 14 #e0e0e0
+#404040 0;
+#X text 414 160 Compress Bands;
+#X msg 856 350;
+#X obj 24 142 inlet~;
+#X obj 75 142 inlet~;
+#X obj 24 228 outlet~;
+#X obj 535 84 inlet;
+#X obj 535 110 s \$0-setComp;
+#X obj 482 136 cnv 10 46 11 empty empty sig2 0 2 0 8 #e0e0e0 #404040
+0;
+#X obj 545 136 cnv 10 22 11 empty empty comp 0 2 0 8 #e0e0e0 #404040
+0;
+#X text 17 20 Takes 2 args: Window Size \, No. Overlaps;
+#X obj 213 140 jw.createHanning~ 1024 \$0;
+#X obj 24 188 jw.fftCrossSynth~ \$0 1024 4;
+#X connect 6 0 15 0;
+#X connect 7 0 15 1;
+#X connect 9 0 10 0;
+#X connect 15 0 8 0;
+#X coords 0 -1 1 1 160 63 2 411 133;

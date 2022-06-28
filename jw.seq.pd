@@ -1,0 +1,87 @@
+#N canvas 495 25 734 506 12;
+#X obj 278 41 tgl 41 0 \$0-t1 empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 321 41 tgl 41 0 \$0-t2 empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 364 41 tgl 41 0 \$0-t3 empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 407 41 tgl 41 0 \$0-t4 empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 450 41 tgl 41 0 \$0-t5 empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 493 41 tgl 41 0 \$0-t6 empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 536 41 tgl 41 0 \$0-t7 empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 579 41 tgl 41 0 \$0-t8 empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 28 238 r \$0-t1;
+#X obj 10 271 f;
+#X obj 10 351 sel 1;
+#X obj 89 271 f;
+#X obj 168 271 f;
+#X obj 247 271 f;
+#X obj 327 271 f;
+#X obj 406 271 f;
+#X obj 485 271 f;
+#X obj 564 271 f;
+#X obj 107 238 r \$0-t2;
+#X obj 186 238 r \$0-t3;
+#X obj 265 238 r \$0-t4;
+#X obj 345 238 r \$0-t5;
+#X obj 424 238 r \$0-t6;
+#X obj 503 238 r \$0-t7;
+#X obj 582 238 r \$0-t8;
+#X obj 10 423 outlet;
+#X text 61 424 Bangs on selected beats;
+#X obj 9 40 inlet;
+#X obj 72 40 inlet;
+#X text 10 7 count;
+#X text 71 8 start no.;
+#X obj 72 71 f \$1;
+#X obj 116 40 loadbang;
+#X obj 9 114 -;
+#X obj 10 152 sel 0 1 2 3 4 5 6 7, f 91;
+#X obj 277 14 cnv 15 344 24 empty empty Sequencer 136 12 0 14 #e0e0e0
+#404040 0;
+#X obj 277 14 cnv 15 75 15 empty empty step\  3 4 0 8 #e0e0e0 #404040
+0;
+#X obj 277 85 cnv 15 344 15 empty empty sequenced\ bangs 3 8 0 8 #e0e0e0
+#404040 0;
+#X obj 546 14 cnv 15 75 15 empty empty offset 21 4 0 8 #e0e0e0 #404040
+0;
+#X obj 598 15 nbx 3 8 -1e+37 1e+37 0 0 \$0-dummyReceive \$0-offset
+empty 0 -8 0 10 #e0e0e0 #000000 #000000 0 256 0;
+#X obj 87 105 s \$0-offset;
+#X connect 8 0 9 1;
+#X connect 9 0 10 0;
+#X connect 10 0 25 0;
+#X connect 11 0 10 0;
+#X connect 12 0 10 0;
+#X connect 13 0 10 0;
+#X connect 14 0 10 0;
+#X connect 15 0 10 0;
+#X connect 16 0 10 0;
+#X connect 17 0 10 0;
+#X connect 18 0 11 1;
+#X connect 19 0 12 1;
+#X connect 20 0 13 1;
+#X connect 21 0 14 1;
+#X connect 22 0 15 1;
+#X connect 23 0 16 1;
+#X connect 24 0 17 1;
+#X connect 27 0 33 0;
+#X connect 28 0 31 0;
+#X connect 31 0 33 1;
+#X connect 31 0 40 0;
+#X connect 32 0 31 0;
+#X connect 33 0 34 0;
+#X connect 34 0 9 0;
+#X connect 34 1 11 0;
+#X connect 34 2 12 0;
+#X connect 34 3 13 0;
+#X connect 34 4 14 0;
+#X connect 34 5 15 0;
+#X connect 34 6 16 0;
+#X connect 34 7 17 0;
+#X coords 0 -1 1 1 348 92 2 275 11;

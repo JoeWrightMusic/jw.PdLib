@@ -1,0 +1,33 @@
+#N canvas 229 133 622 404 12;
+#X msg 398 130 \$1 10;
+#X obj 255 80 *~ 0.5;
+#X obj 255 103 +~ 0.5;
+#X text 307 84 scale to 0-1 range, f 9;
+#X obj 255 198 *~;
+#X obj 398 159 line~;
+#X obj 179 105 sig~ 1;
+#X obj 179 239 -~;
+#X text 285 198 scale by chosen depth value;
+#X text 206 239 take our modulator away from 1 \, this way if depth
+== 0 \, we still get a full-volume carrier wave when we multiply the
+carrier and modifier together.;
+#X obj 14 285 *~;
+#X obj 13 26 inlet~;
+#X obj 255 26 inlet~;
+#X obj 398 26 inlet;
+#X obj 14 377 outlet~;
+#X text 254 4 MODULATOR SIG~;
+#X text 13 4 CARRIER SIG~;
+#X text 397 3 DEPTH;
+#X text 71 377 AM OUTPUT~;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 4 0 7 1;
+#X connect 5 0 4 1;
+#X connect 6 0 7 0;
+#X connect 7 0 10 1;
+#X connect 10 0 14 0;
+#X connect 11 0 10 0;
+#X connect 12 0 1 0;
+#X connect 13 0 0 0;

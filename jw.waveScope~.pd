@@ -1,0 +1,33 @@
+#N canvas 43 25 374 247 12;
+#X obj 5 71 inlet~;
+#X obj 61 55 loadbang;
+#X msg 61 79 1;
+#X obj 61 103 metro 250;
+#X text 138 1 The \$0 in the argument of array sets a unique number
+for each instance of the abstraction \, meaning we dont accidentally
+duplicate our arrays/tables, f 31;
+#X obj 5 134 tabwrite~ \$0-array;
+#N canvas 32 25 450 278 (subpatch) 0;
+#X array \$0-array 256 float 1 black black;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 1 255 -1 198 126 1;
+#X restore 148 105 graph;
+#X obj 320 92 nbx 4 8 21 1000 0 1 empty empty Refresh\ Rate -52 3 0
+7 #e0e0e0 #000000 #000000 1000 256 0;
+#X obj 5 159 outlet~;
+#X obj 148 92 cnv 10 199 11 empty empty signal\ in~ 0 2 0 8 #e0e0e0
+#404040 0;
+#X connect 0 0 5 0;
+#X connect 0 0 8 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 7 0 3 0;
+#X coords 0 -1 1 1 204 145 2 145 89;

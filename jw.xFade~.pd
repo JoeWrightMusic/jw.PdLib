@@ -1,0 +1,45 @@
+#N canvas 547 70 809 476 12;
+#X obj 15 106 inlet~;
+#X obj 245 106 inlet~;
+#X obj 342 106 inlet;
+#X obj 3 5 cnv 15 800 60 empty empty xFade~ 20 12 0 30 #e0e0e0 #404040
+0;
+#X text 20 32 Equal power crossfader: this will cross-fade between
+two signals \, using a sinusoidal curve to give a perceptially 'smoother'
+transition between signals., f 80;
+#X obj 47 223 expr cos($f1 * 3.14159 / 2);
+#X obj 342 220 expr sin($f1 * 3.14159 / 2);
+#X obj 342 130 clip 0 1;
+#X text 404 131 constrain input to ensure consistent results;
+#X msg 47 245 \$1 15;
+#X msg 342 244 \$1 15;
+#X obj 47 266 line~;
+#X obj 342 266 line~;
+#X obj 14 304 *~;
+#X obj 245 304 *~;
+#X obj 14 385 outlet~;
+#X text 327 310 We use the [expr] object to define a mathematical expression
+that works on the input ($f1).;
+#X text 327 340 In this case \, we multiply signal A by cos(xFade*pi)
+\, and signal B by sin(xFade*pi). If we ramp the xFade value from 0-1
+\, the cos function will start off at 1 and smoothly transition to
+0 \, while the sine function will do the opposite - from 0-1. This
+means we get a smooth transition from signal A to B \, where A fades
+out as B fades in.;
+#X text 14 74 SIGNAL A;
+#X text 244 74 SIGNAL B;
+#X text 341 74 XFADE: MIX OF SIGS A & B \, 0=A \, 1=B;
+#X text 69 385 BLENDED AB SIGNAL;
+#X connect 0 0 13 0;
+#X connect 1 0 14 0;
+#X connect 2 0 7 0;
+#X connect 5 0 9 0;
+#X connect 6 0 10 0;
+#X connect 7 0 6 0;
+#X connect 7 0 5 0;
+#X connect 9 0 11 0;
+#X connect 10 0 12 0;
+#X connect 11 0 13 1;
+#X connect 12 0 14 1;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;

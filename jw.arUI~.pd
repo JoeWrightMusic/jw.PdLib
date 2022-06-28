@@ -1,0 +1,52 @@
+#N canvas 179 100 1041 733.094 12;
+#X obj 181 212 r \$0-trig;
+#X obj 124 113 cnv 15 35 37 empty empty AR 5 16 0 20 #e0e0e0 #404040
+0;
+#X obj 160 113 hsl 152 36 2 5000 1 0 \$0-att \$0-setAtt ATTACK 7 16
+0 15 #ffffff #000000 #000000 0 1;
+#X obj 160 150 hsl 152 34 2 5000 1 0 \$0-rel \$0-setRel RELEASE 7 16
+0 15 #ffffff #000000 #000000 0 1;
+#X obj 124 150 bng 34 250 50 0 \$0-trig \$0-trigIn empty 17 7 0 10
+#e0e0e0 #000000 #000000;
+#X obj 120 33 inlet;
+#X obj 181 349 outlet~;
+#X obj 203 33 inlet;
+#X obj 303 33 inlet;
+#X text 120 10 Bang in;
+#X text 201 10 attack;
+#X text 297 10 release;
+#X obj 203 63 s \$0-setAtt;
+#X obj 303 63 s \$0-setRel;
+#X obj 120 63 s \$0-trigIn;
+#X obj 181 255 ar~;
+#X obj 42 33 inlet~;
+#X text 20 10 signal in;
+#X obj 42 349 outlet~;
+#X obj 42 288 *~;
+#X obj 254 212 r \$0-att;
+#X obj 319 212 r \$0-rel;
+#X text 12 370 enveloped signal~;
+#X text 181 370 envelope only~;
+#X obj 124 97 cnv 15 50 15 empty empty sig~ 1 5 0 8 #e0e0e0 #404040
+0;
+#X obj 168 97 cnv 15 69 15 empty empty trig 14 5 0 8 #e0e0e0 #404040
+0;
+#X obj 229 97 cnv 15 46 15 empty empty att 15 5 0 8 #e0e0e0 #404040
+0;
+#X obj 274 97 cnv 15 43 15 empty empty rel 26 5 0 8 #e0e0e0 #404040
+0;
+#X obj 124 185 cnv 10 118 13 empty empty enveloped\ sig~ 1 7 0 8 #e0e0e0
+#404040 0;
+#X obj 242 185 cnv 10 76 13 empty empty envelope~ 28 7 0 8 #e0e0e0
+#404040 0;
+#X connect 0 0 15 0;
+#X connect 5 0 14 0;
+#X connect 7 0 12 0;
+#X connect 8 0 13 0;
+#X connect 15 0 6 0;
+#X connect 15 0 19 1;
+#X connect 16 0 19 0;
+#X connect 19 0 18 0;
+#X connect 20 0 15 1;
+#X connect 21 0 15 2;
+#X coords 0 -1 1 1 197 105 2 122 95;

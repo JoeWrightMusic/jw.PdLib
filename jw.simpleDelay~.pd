@@ -1,0 +1,63 @@
+#N canvas 122 60 810 788 12;
+#X obj 3 4 cnv 15 700 60 empty empty simpleDelay~ 20 12 0 30 #e0e0e0
+#404040 0;
+#X text 24 37 A simple delay example using delwrite~ and delread~;
+#X obj 10 101 inlet~;
+#X obj 60 248 delwrite~ \$0-delFx 10000;
+#X obj 60 216 r~ \$0-delFdbk;
+#X text 158 215 <-- add feedback signal to input chain here;
+#X obj 151 100 inlet;
+#X obj 62 344 clip 0 10000;
+#X text 156 343 <-- constrain delay time to 10s;
+#X obj 62 408 delread~ \$0-delFx;
+#X text 239 249 <-- create a buffer called \$0-delFx that can store
+10s of audio (10000ms). We write the incoming signal and feedback signal
+to this buffer to re-use later.;
+#X text 192 408 <-- get the delayed signal by reading from the buffer
+\, with a delay of the Delay Time in ms.;
+#X text 151 78 DELAY TIME (ms);
+#X text 10 78 INCOMING DRY SIGNAL;
+#X obj 368 99 inlet;
+#X text 366 78 DRY/WET (0-1);
+#X obj 10 703 xFade~, f 15;
+#X obj 10 751 outlet~;
+#X obj 263 99 inlet;
+#X text 262 78 FEEDBACK (0-1);
+#X text 232 458 WARNING: setting feedback close to 1 could cause runaway
+feedback \, make sure you have a clip in place before your dac~;
+#X obj 107 569 *~;
+#X obj 125 501 clip 0 1;
+#X obj 62 387 line;
+#X msg 62 366 \$1 5;
+#X msg 125 523 \$1 5;
+#X obj 125 547 line~;
+#X obj 107 591 s~ \$0-delFdbk;
+#X obj 10 727 clip~ -1 1;
+#X text 212 592 <-- send feedback back to top of signal chain;
+#X text 70 751 Combined Wet/Dry sig out~;
+#X obj 151 123 s \$0-delT;
+#X obj 62 321 r \$0-delT;
+#X obj 263 122 s \$0-fdbkAmt;
+#X obj 125 478 r \$0-fdbkAmt;
+#X obj 368 122 s \$0-dryWet;
+#X obj 112 678 r \$0-dryWet;
+#X connect 2 0 3 0;
+#X connect 2 0 16 0;
+#X connect 4 0 3 0;
+#X connect 6 0 31 0;
+#X connect 7 0 24 0;
+#X connect 9 0 16 1;
+#X connect 9 0 21 0;
+#X connect 14 0 35 0;
+#X connect 16 0 28 0;
+#X connect 18 0 33 0;
+#X connect 21 0 27 0;
+#X connect 22 0 25 0;
+#X connect 23 0 9 0;
+#X connect 24 0 23 0;
+#X connect 25 0 26 0;
+#X connect 26 0 21 1;
+#X connect 28 0 17 0;
+#X connect 32 0 7 0;
+#X connect 34 0 22 0;
+#X connect 36 0 16 2;

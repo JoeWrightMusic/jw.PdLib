@@ -1,0 +1,69 @@
+#N canvas 76 173 903 533.125 12;
+#X obj 36 188 cnv 10 155 11 empty empty enveloped\ signal~ 0 4 0 8
+#e0e0e0 #404040 0;
+#X obj 36 18 cnv 15 155 15 empty empty sig~ 0 5 0 8 #e0e0e0 #404040
+0;
+#X obj 341 297 adsr~, f 21;
+#X obj 36 64 hsl 150 30 2 2000 1 1 \$0-a \$0-setA ATTACK 5 16 0 15
+#ffffff #000000 #000000 7290 1;
+#X obj 36 95 hsl 150 30 2 2000 1 1 \$0-d \$0-setD DECAY 5 16 0 15 #ffffff
+#000000 #000000 8043 1;
+#X obj 36 126 hsl 150 30 0 1 0 1 \$0-s \$0-setS SUSTAIN 5 16 0 15 #ffffff
+#000000 #000000 5700 1;
+#X obj 36 157 hsl 150 30 2 2000 1 1 \$0-r \$0-setR RELEASE 5 16 0 15
+#ffffff #000000 #000000 7697 1;
+#X obj 431 65 inlet;
+#X obj 521 65 inlet;
+#X obj 591 65 inlet;
+#X obj 661 65 inlet;
+#X obj 341 65 inlet;
+#X text 438 46 a;
+#X text 526 46 d;
+#X text 596 46 s;
+#X text 670 46 r;
+#X obj 431 98 s \$0-setA;
+#X obj 661 96 s \$0-setR;
+#X obj 591 97 s \$0-setS;
+#X obj 521 98 s \$0-setD;
+#X obj 433 257 r \$0-d;
+#X obj 483 257 r \$0-s;
+#X obj 533 257 r \$0-r;
+#X obj 383 257 r \$0-a;
+#X obj 351 98 s \$0-setT;
+#X obj 235 379 outlet~;
+#X obj 36 34 cnv 15 155 29 empty empty ADSR 20 12 0 14 #e0e0e0 #404040
+0;
+#X text 345 46 trig;
+#X obj 236 65 inlet~;
+#X text 233 42 signal in;
+#X obj 235 352 *~;
+#X obj 341 379 outlet~;
+#X text 136 403 Enveloped Signal Out~;
+#X text 342 402 Envelope Only~;
+#X obj 59 18 cnv 15 24 15 empty empty trig 0 5 0 8 #e0e0e0 #404040
+0;
+#X obj 89 18 cnv 15 18 15 empty empty att 2 5 0 8 #e0e0e0 #404040 0
+;
+#X obj 119 18 cnv 15 18 15 empty empty dec 2 5 0 8 #e0e0e0 #404040
+0;
+#X obj 149 18 cnv 15 18 15 empty empty sus 2 5 0 8 #e0e0e0 #404040
+0;
+#X obj 173 18 cnv 15 18 15 empty empty rel 4 5 0 8 #e0e0e0 #404040
+0;
+#X obj 145 188 cnv 10 46 11 empty empty envelope~ 0 4 0 8 #e0e0e0 #404040
+0;
+#X connect 2 0 30 1;
+#X connect 2 0 31 0;
+#X connect 7 0 16 0;
+#X connect 8 0 19 0;
+#X connect 9 0 18 0;
+#X connect 10 0 17 0;
+#X connect 11 0 24 0;
+#X connect 11 0 2 0;
+#X connect 20 0 2 2;
+#X connect 21 0 2 3;
+#X connect 22 0 2 4;
+#X connect 23 0 2 1;
+#X connect 28 0 30 0;
+#X connect 30 0 25 0;
+#X coords 0 -1 1 1 161 187 2 33 15;

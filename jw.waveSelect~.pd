@@ -1,0 +1,70 @@
+#N canvas 469 159 772 579.156 12;
+#X obj 42 83 cnv 8 49 13 empty empty freq~ 0 3 0 8 #e0e0e0 #404040
+0;
+#X obj 11 3 cnv 15 756 57 empty empty waveSelect~ 20 12 0 20 #e0e0e0
+#404040 0;
+#X text 29 34 oscilator with a selection of waveforms;
+#X obj 326 308 osc~;
+#X obj 42 110 vradio 25 0 0 4 \$0-waveSel \$0-setWave empty 0 -8 0
+10 #ffffff #000000 #000000 0;
+#X text 68 112 SINE;
+#X text 68 164 TRIANGLE;
+#X text 68 138 SQUARE;
+#X text 68 190 SAW;
+#X obj 226 332 r \$0-waveSel;
+#X text 325 84 FREQUENCY (Hz);
+#X obj 437 106 inlet;
+#X text 435 83 WAVE SEL (0-3);
+#X obj 577 106 inlet;
+#X text 575 83 RESET PHASE (bang);
+#X obj 346 376 == 0;
+#X obj 416 376 == 1;
+#X obj 496 376 == 2;
+#X obj 576 376 == 3;
+#X obj 328 440 *~;
+#X obj 398 440 *~;
+#X obj 478 440 *~;
+#X obj 558 440 *~;
+#X obj 437 169 s \$0-setWave;
+#X obj 329 521 outlet~;
+#X obj 486 106 loadbang;
+#X msg 486 130 0;
+#X obj 398 308 sqOsc~;
+#X obj 478 308 triOsc~;
+#X obj 559 308 sawOsc~;
+#X obj 327 107 inlet~;
+#X text 386 519 waveform out~;
+#X obj 42 212 cnv 8 86 9 empty empty wave\ signal~ 0 3 0 8 #e0e0e0
+#404040 0;
+#X obj 95 83 cnv 8 33 16 empty empty rst 19 2 0 8 #e0e0e0 #404040 0
+;
+#X obj 42 93 cnv 15 86 15 empty empty Wave\ Select 4 5 0 12 #e0e0e0
+#404040 0;
+#X obj 73 83 cnv 8 31 10 empty empty wsel 3 3 0 8 #e0e0e0 #404040 0
+;
+#X connect 3 0 19 0;
+#X connect 9 0 15 0;
+#X connect 9 0 16 0;
+#X connect 9 0 17 0;
+#X connect 9 0 18 0;
+#X connect 11 0 23 0;
+#X connect 13 0 28 1;
+#X connect 13 0 27 1;
+#X connect 15 0 19 1;
+#X connect 16 0 20 1;
+#X connect 17 0 21 1;
+#X connect 18 0 22 1;
+#X connect 19 0 24 0;
+#X connect 20 0 24 0;
+#X connect 21 0 24 0;
+#X connect 22 0 24 0;
+#X connect 25 0 26 0;
+#X connect 26 0 23 0;
+#X connect 27 0 20 0;
+#X connect 28 0 21 0;
+#X connect 29 0 22 0;
+#X connect 30 0 3 0;
+#X connect 30 0 27 0;
+#X connect 30 0 28 0;
+#X connect 30 0 29 0;
+#X coords 0 -1 1 1 90 142 2 40 81;

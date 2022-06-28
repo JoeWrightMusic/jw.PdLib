@@ -1,0 +1,33 @@
+#N canvas 114 45 686 372 12;
+#X obj 150 112 tgl 15 0 \$0-recordTog empty empty 17 7 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X text 169 109 toggle record;
+#X obj 151 69 bng 15 250 50 0 \$0-openFile empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 146 313 writesf~ 2;
+#X text 301 207 create 24-bit soundfile;
+#X msg 166 229 start;
+#X msg 216 229 stop;
+#X obj 166 203 sel 1 0;
+#X obj 165 172 r \$0-recordTog;
+#X msg 261 229 open -bytes 3 pdRecording.wav;
+#X obj 271 172 r \$0-openFile;
+#X text 167 67 open soundfile (do this first), f 15;
+#X obj 93 287 inlet~;
+#X obj 213 287 inlet~;
+#X obj 140 25 cnv 15 71 15 empty empty left~ 1 5 0 8 #e0e0e0 #404040
+0;
+#X obj 212 25 cnv 15 75 15 empty empty right~ 45 4 0 8 #e0e0e0 #404040
+0;
+#X obj 140 41 cnv 15 147 16 empty empty Audio\ Record 24 4 0 14 #e0e0e0
+#404040 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 5 0;
+#X connect 7 1 6 0;
+#X connect 8 0 7 0;
+#X connect 9 0 3 0;
+#X connect 10 0 9 0;
+#X connect 12 0 3 0;
+#X connect 13 0 3 1;
+#X coords 0 -1 1 1 154 112 2 136 21;

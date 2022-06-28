@@ -1,0 +1,101 @@
+#N canvas 49 25 725 541 12;
+#X obj 176 233 inlet~;
+#X obj 197 373 *~;
+#X obj 197 414 *~;
+#X obj 197 463 clip~ -1 1;
+#X obj 103 44 hsl 148 31 0.01 1.01 1 0 \$0-volume \$0-setVolume VOLUME
+48 13 0 15 #ffffff #000000 #000000 0 1;
+#X obj 335 252 r \$0-volume;
+#X obj 335 274 - 0.01;
+#X msg 335 296 \$1 10;
+#X obj 335 317 line~;
+#X obj 70 44 tgl 31 0 \$0-mute \$0-setMute MUTE 3 13 0 10 #ffffff #000000
+#000000 0 1;
+#X msg 454 350 \$1 10;
+#X obj 454 371 line~;
+#X obj 447 252 r \$0-mute;
+#X obj 454 284 t b f;
+#X obj 454 327 -;
+#X msg 454 306 1;
+#X obj 519 226 loadbang;
+#X msg 519 250 0;
+#X text 174 210 signal in;
+#X text 254 540 signal out;
+#X obj 327 85 inlet;
+#X obj 458 80 inlet;
+#X text 326 56 volume 0-1;
+#X text 455 56 mute 0/1 mute==1;
+#X obj 327 108 s \$0-setVolume;
+#X obj 458 182 s \$0-setMute;
+#X obj 458 102 sel 0;
+#X msg 458 126 0;
+#X obj 490 125 t b;
+#X msg 490 146 1;
+#X obj 38 127 r pd;
+#X obj 38 151 route dsp;
+#X obj 37 44 tgl 31 0 \$0-fromDspTog \$0-toDspTog DSP 7 13 0 10 #000000
+#ffffff #ffffff 0 1;
+#X obj 38 252 change;
+#X obj 38 297 s pd;
+#X msg 38 275 dsp \$1;
+#X obj 38 229 r \$0-fromDspTog;
+#X obj 38 175 s \$0-toDspTog;
+#X text 38 102 Turn DSP on/off;
+#X obj 257 518 dac~;
+#X obj 317 372 *~;
+#X obj 317 413 *~;
+#X obj 317 462 clip~ -1 1;
+#X obj 245 233 inlet~;
+#X text 243 210 signal in;
+#X obj 316 517 outlet~;
+#X obj 376 517 outlet~;
+#X obj 37 76 cnv 10 174 11 empty empty left\ ch.~ 0 5 0 8 #e0e0e0 #404040
+0;
+#X obj 37 32 cnv 10 219 11 empty empty left\ ch.~ 0 2 0 8 #e0e0e0 #404040
+0;
+#X obj 90 32 cnv 10 62 11 empty empty right\ ch.~ 0 2 0 8 #e0e0e0 #404040
+0;
+#X obj 168 32 cnv 10 62 11 empty empty volume 0 2 0 8 #e0e0e0 #404040
+0;
+#X obj 221 32 cnv 10 35 11 empty empty mute 15 2 0 8 #e0e0e0 #404040
+0;
+#X obj 207 76 cnv 10 49 11 empty empty right\ ch.~ -2 5 0 8 #e0e0e0
+#404040 0;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 39 0;
+#X connect 3 0 45 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 1 1;
+#X connect 8 0 40 1;
+#X connect 10 0 11 0;
+#X connect 11 0 2 1;
+#X connect 11 0 41 1;
+#X connect 12 0 13 0;
+#X connect 13 0 15 0;
+#X connect 13 1 14 1;
+#X connect 14 0 10 0;
+#X connect 15 0 14 0;
+#X connect 16 0 17 0;
+#X connect 17 0 13 0;
+#X connect 20 0 24 0;
+#X connect 21 0 26 0;
+#X connect 26 0 27 0;
+#X connect 26 1 28 0;
+#X connect 27 0 25 0;
+#X connect 28 0 29 0;
+#X connect 29 0 25 0;
+#X connect 30 0 31 0;
+#X connect 31 0 37 0;
+#X connect 33 0 35 0;
+#X connect 35 0 34 0;
+#X connect 36 0 33 0;
+#X connect 40 0 41 0;
+#X connect 41 0 42 0;
+#X connect 42 0 39 1;
+#X connect 42 0 46 0;
+#X connect 43 0 40 0;
+#X coords 0 -1 1 1 225 61 2 34 29;
