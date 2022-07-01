@@ -1,11 +1,11 @@
-#N canvas 4 25 968 706 12;
+#N canvas 236 25 968 706 12;
 #X obj 46 631 jw.granular~, f 29;
 #X obj 51 289 tgl 15 0 \$0-metroTog \$0-metroTogUI empty 17 7 0 10
-#fcfcfc #000000 #000000 0 1;
+#fcfcfc #000000 #000000 1 1;
 #X obj 51 312 tgl 15 0 \$0-dustTog \$0-dustTogUI empty 17 7 0 10 #fcfcfc
 #000000 #000000 0 1;
 #X text 68 286 metro;
-#X floatatom 110 286 8 0 0 0 - #0-metroMsUI #0-metroMs, f 8;
+#X floatatom 110 286 8 0 1e+07 0 - #0-metroMsUI #0-metroMs, f 8;
 #X floatatom 86 333 8 0 0 0 - #0-dustMinUI #0-dustMin, f 8;
 #X obj 51 380 bng 15 250 50 0 \$0-oneShot \$0-oneShotUI empty 17 7
 0 10 #fcfcfc #000000 #000000;
@@ -22,7 +22,7 @@
 #X floatatom 197 333 5 0 0 0 - #0-dustExpUI #0-dustExp, f 5;
 #X obj 50 261 cnv 15 189 22 empty empty Triggers 5 8 0 14 #e0e0e0 #404040
 0;
-#N canvas 955 66 800 470 handleTrigParams 0;
+#N canvas 160 22 800 470 handleTrigParams 0;
 #X obj 218 80 r \$0-metroMs;
 #X obj 120 137 pack 0 100;
 #X obj 120 80 r \$0-metroTog;
@@ -67,19 +67,23 @@
 #X connect 16 0 19 0;
 #X connect 17 0 18 0;
 #X restore 46 456 pd handleTrigParams;
-#N canvas 0 22 450 300 handleTrigInputs 0;
-#X obj 40 104 unpack;
-#X obj 185 104 unpack f f f f;
-#X obj 40 80 route metro megaDust, f 42;
-#X obj 79 152 s \$0-metroMsUI;
-#X obj 40 128 s \$0-metroTogUI;
-#X obj 185 129 s \$0-dustTogUI;
-#X obj 331 104 t b;
-#X obj 331 127 s \$0-oneShotUI;
-#X obj 195 151 s \$0-dustMinUI;
-#X obj 205 173 s \$0-dustMaxUI;
-#X obj 215 195 s \$0-dustExpUI;
-#X obj 13 26 inlet;
+#N canvas 495 25 500 333 handleTrigInputs 0;
+#X obj 40 164 unpack;
+#X obj 185 164 unpack f f f f;
+#X obj 40 140 route metro megaDust, f 42;
+#X obj 79 212 s \$0-metroMsUI;
+#X obj 40 188 s \$0-metroTogUI;
+#X obj 185 189 s \$0-dustTogUI;
+#X obj 331 164 t b;
+#X obj 331 187 s \$0-oneShotUI;
+#X obj 195 211 s \$0-dustMinUI;
+#X obj 205 233 s \$0-dustMaxUI;
+#X obj 215 255 s \$0-dustExpUI;
+#X obj 13 86 inlet;
+#X obj 79 99 jw.loadnum 100;
+#X obj 227 24 jw.loadnum 10;
+#X obj 237 47 jw.loadnum 1000;
+#X obj 254 71 jw.loadnum 3;
 #X connect 0 0 4 0;
 #X connect 0 1 3 0;
 #X connect 1 0 5 0;
@@ -91,6 +95,10 @@
 #X connect 2 2 6 0;
 #X connect 6 0 7 0;
 #X connect 11 0 2 0;
+#X connect 12 0 3 0;
+#X connect 13 0 8 0;
+#X connect 14 0 9 0;
+#X connect 15 0 10 0;
 #X restore 60 129 pd handleTrigInputs;
 #X obj 201 104 inlet;
 #X obj 245 261 cnv 15 184 22 empty empty Start\ Position 5 8 0 14 #e0e0e0
@@ -109,19 +117,22 @@
 #X obj 245 289 tgl 15 0 \$0-posLoopTog \$0-posLoopTogUI empty 17 7
 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 245 312 tgl 15 0 \$0-posSweepTog \$0-posSweepTogUI empty 17
-7 0 10 #fcfcfc #000000 #000000 0 1;
+7 0 10 #fcfcfc #000000 #000000 1 1;
 #X text 408 311 ms;
-#N canvas 0 22 450 300 handlePosInputs 0;
-#X obj 40 80 inlet;
-#X obj 40 80 route loop randSweep, f 59;
-#X obj 40 107 unpack f f;
-#X obj 40 136 s \$0-posLoopTogUI;
-#X obj 107 161 s \$0-posLoopHzUI;
-#X obj 229 110 unpack f f;
-#X obj 229 139 s \$0-posSweepTogUI;
-#X obj 296 164 s \$0-posSweepMsUI;
-#X obj 412 140 s \$0-posSweepPosUI;
-#X obj 13 26 inlet;
+#N canvas 739 22 633 300 handlePosInputs 0;
+#X obj 40 150 inlet;
+#X obj 40 150 route loop randSweep, f 59;
+#X obj 40 177 unpack f f;
+#X obj 40 206 s \$0-posLoopTogUI;
+#X obj 107 231 s \$0-posLoopHzUI;
+#X obj 229 180 unpack f f;
+#X obj 229 209 s \$0-posSweepTogUI;
+#X obj 296 234 s \$0-posSweepMsUI;
+#X obj 412 210 s \$0-posSweepPosUI;
+#X obj 13 96 inlet;
+#X obj 162 83 loadnum 0.2;
+#X obj 88 84 loadnum 0;
+#X obj 251 82 loadnum 1000;
 #X connect 1 0 2 0;
 #X connect 1 1 5 0;
 #X connect 1 2 8 0;
@@ -130,6 +141,11 @@
 #X connect 5 0 6 0;
 #X connect 5 1 7 0;
 #X connect 9 0 1 0;
+#X connect 10 0 4 0;
+#X connect 11 0 3 0;
+#X connect 11 0 6 0;
+#X connect 11 0 8 0;
+#X connect 12 0 7 0;
 #X restore 201 129 pd handlePosInputs;
 #N canvas 255 135 957 331 handlePosParams 0;
 #X obj 179 96 r \$0-posLoopTog;
@@ -188,12 +204,12 @@
 #X floatatom 581 310 5 0 0 0 - #0-durRandExpUI #0-durRandExp, f 5
 ;
 #X obj 435 289 tgl 15 0 \$0-durRandTog \$0-durRandTogUI empty 17 7
-0 10 #fcfcfc #000000 #000000 0 1;
+0 10 #fcfcfc #000000 #000000 1 1;
 #X floatatom 552 355 6 0 0 0 - #0-fixedDurUI #0-fixedDur, f 6;
 #X text 435 354 set fixed pos:;
 #X text 452 286 randomise;
 #X obj 336 104 inlet;
-#N canvas 0 22 450 300 handleDurParams 1;
+#N canvas 0 22 450 300 handleDurParams 0;
 #X obj 269 190 t 0;
 #X obj 269 219 s \$0-durRandTogUI;
 #X obj 42 80 r \$0-durRandTog;
@@ -238,11 +254,11 @@
 #X floatatom 776 310 5 0 0 0 - #0-panRandExpUI #0-panRandExp, f 5
 ;
 #X obj 630 289 tgl 15 0 \$0-panRandTog \$0-panRandTogUI empty 17 7
-0 10 #fcfcfc #000000 #000000 0 1;
+0 10 #fcfcfc #000000 #000000 1 1;
 #X floatatom 747 355 6 0 0 0 - #0-fixedPanUI #0-fixedPan, f 6;
 #X text 630 354 set fixed pos:;
 #X text 647 286 randomise;
-#N canvas 0 22 450 300 handleDurInputs 0;
+#N canvas 495 25 450 300 handleDurInputs 0;
 #X obj 40 80 route randRange, f 31;
 #X obj 40 109 unpack 0 0 0 0;
 #X obj 40 142 s \$0-durRandTogUI;
@@ -251,6 +267,11 @@
 #X obj 101 218 s \$0-durRandExpUI;
 #X obj 155 109 s \$0-fixedDurUI;
 #X obj 13 26 inlet;
+#X obj 184 134 loadnum 0;
+#X obj 202 156 loadnum 10;
+#X obj 219 179 loadnum 1000;
+#X obj 238 202 loadnum 8;
+#X obj 284 110 loadnum 50;
 #X connect 0 0 1 0;
 #X connect 0 1 6 0;
 #X connect 1 0 2 0;
@@ -258,8 +279,13 @@
 #X connect 1 2 4 0;
 #X connect 1 3 5 0;
 #X connect 7 0 0 0;
+#X connect 8 0 2 0;
+#X connect 9 0 3 0;
+#X connect 10 0 4 0;
+#X connect 11 0 5 0;
+#X connect 12 0 6 0;
 #X restore 335 129 pd handleDurInputs;
-#N canvas 0 22 450 300 hanldlePanInputs 0;
+#N canvas 495 25 450 300 hanldlePanInputs 0;
 #X obj 40 80 route randRange, f 31;
 #X obj 40 109 unpack 0 0 0 0;
 #X obj 40 142 s \$0-panRandTogUI;
@@ -268,6 +294,9 @@
 #X obj 101 218 s \$0-panRandExpUI;
 #X obj 155 109 s \$0-fixedPanUI;
 #X obj 13 26 inlet;
+#X obj 254 140 loadnum 0;
+#X obj 255 169 loadnum 1;
+#X obj 282 79 loadnum 0.5;
 #X connect 0 0 1 0;
 #X connect 0 1 6 0;
 #X connect 1 0 2 0;
@@ -275,6 +304,11 @@
 #X connect 1 2 4 0;
 #X connect 1 3 5 0;
 #X connect 7 0 0 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 9 0 4 0;
+#X connect 9 0 5 0;
+#X connect 10 0 6 0;
 #X restore 566 129 pd hanldlePanInputs;
 #X obj 472 104 inlet;
 #X obj 472 129 s \$0-speedUI;
@@ -365,6 +399,8 @@
 0;
 #X obj 46 660 outlet~;
 #X obj 246 657 outlet~;
+#X obj 465 81 loadnum 1;
+#X obj 828 104 loadnum 0;
 #X connect 0 0 97 0;
 #X connect 0 1 98 0;
 #X connect 11 0 20 0;
@@ -385,4 +421,6 @@
 #X connect 83 0 85 0;
 #X connect 84 0 86 0;
 #X connect 87 0 0 6;
+#X connect 99 0 70 0;
+#X connect 100 0 82 0;
 #X coords 0 -1 1 1 773 203 2 47 244;
