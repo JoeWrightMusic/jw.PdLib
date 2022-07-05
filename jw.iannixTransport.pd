@@ -1,0 +1,18 @@
+#N canvas 159 -523 693 300 12;
+#X msg 251 188 send /iannix/setSpeed \$1 \$2;
+#X msg 164 41 send /iannix/stop;
+#X msg 191 88 send /iannix/play \$1;
+#X msg 223 137 send /iannix/fastrewind;
+#X obj 251 162 r inxControlCursors;
+#X obj 164 17 r inxStop;
+#X obj 191 64 r inxPlay;
+#X obj 223 113 r inxRewind;
+#X obj 162 233 s inxSendMsg;
+#X connect 0 0 8 0;
+#X connect 1 0 8 0;
+#X connect 2 0 8 0;
+#X connect 3 0 8 0;
+#X connect 4 0 0 0;
+#X connect 5 0 1 0;
+#X connect 6 0 2 0;
+#X connect 7 0 3 0;
