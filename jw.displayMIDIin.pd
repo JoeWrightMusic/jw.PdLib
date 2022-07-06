@@ -1,0 +1,35 @@
+#N canvas 267 222 699 546 12;
+#X obj 25 -62 ctlin;
+#X obj 141 -63 notein;
+#X obj 79 190 cnv 15 194 28 empty \$0-type ctl 7 12 0 14 #e0e0e0 #404040
+0;
+#X obj 127 190 cnv 15 51 28 empty \$0-num 55 20 12 0 14 #e0e0e0 #404040
+0;
+#X obj 177 190 cnv 15 47 27 empty \$0-vel 42 20 12 0 14 #e0e0e0 #404040
+0;
+#X msg 149 81 label \$1;
+#X msg 33 73 label note;
+#X obj 23 106 s \$0-type;
+#X msg 23 49 label ctl;
+#X obj 149 110 s \$0-num;
+#X obj 149 51 jw.num2symbol;
+#X msg 255 81 label \$1;
+#X obj 255 51 jw.num2symbol;
+#X obj 255 110 s \$0-vel;
+#X obj 240 197 bng 15 50 20 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X connect 0 0 8 0;
+#X connect 0 0 12 0;
+#X connect 0 0 14 0;
+#X connect 0 1 10 0;
+#X connect 1 0 6 0;
+#X connect 1 0 10 0;
+#X connect 1 0 14 0;
+#X connect 1 1 12 0;
+#X connect 5 0 9 0;
+#X connect 6 0 7 0;
+#X connect 8 0 7 0;
+#X connect 10 0 5 0;
+#X connect 11 0 13 0;
+#X connect 12 0 11 0;
+#X coords 0 -1 1 1 201 36 2 75 186;
