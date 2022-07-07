@@ -1,6 +1,6 @@
 #N canvas 236 25 968 706 12;
 #X obj 51 289 tgl 15 0 \$0-metroTog \$0-metroTogUI empty 17 7 0 10
-#fcfcfc #000000 #000000 0 1;
+#fcfcfc #000000 #000000 1 1;
 #X obj 51 312 tgl 15 0 \$0-dustTog \$0-dustTogUI empty 17 7 0 10 #fcfcfc
 #000000 #000000 0 1;
 #X text 68 286 metro;
@@ -114,9 +114,9 @@
 #X text 262 310 random sweep:;
 #X text 244 333 set fixed pos:;
 #X obj 245 289 tgl 15 0 \$0-posLoopTog \$0-posLoopTogUI empty 17 7
-0 10 #fcfcfc #000000 #000000 0 1;
+0 10 #fcfcfc #000000 #000000 0 0.07;
 #X obj 245 312 tgl 15 0 \$0-posSweepTog \$0-posSweepTogUI empty 17
-7 0 10 #fcfcfc #000000 #000000 0 1;
+7 0 10 #fcfcfc #000000 #000000 1 1;
 #X text 408 311 ms;
 #N canvas 739 22 633 300 handlePosInputs 0;
 #X obj 40 150 inlet;
@@ -203,7 +203,7 @@
 #X floatatom 581 310 5 0 0 0 - #0-durRandExpUI #0-durRandExp, f 5
 ;
 #X obj 435 289 tgl 15 0 \$0-durRandTog \$0-durRandTogUI empty 17 7
-0 10 #fcfcfc #000000 #000000 0 1;
+0 10 #fcfcfc #000000 #000000 1 1;
 #X floatatom 552 355 6 0 0 0 - #0-fixedDurUI #0-fixedDur, f 6;
 #X text 452 286 randomise;
 #X obj 336 104 inlet;
@@ -341,9 +341,9 @@
 #404040 0;
 #X text 436 411 short fade;
 #X obj 513 414 tgl 15 0 \$0-winFd \$0-winFdUI empty 17 7 0 10 #fcfcfc
-#000000 #000000 1 1;
-#X obj 561 413 tgl 15 0 \$0-sinFd \$0-sinFdUI empty 17 7 0 10 #fcfcfc
 #000000 #000000 0 1;
+#X obj 561 413 tgl 15 0 \$0-sinFd \$0-sinFdUI empty 17 7 0 10 #fcfcfc
+#000000 #000000 1 1;
 #X text 533 411 sin;
 #X obj 711 104 inlet;
 #X obj 711 133 s \$0-buf;

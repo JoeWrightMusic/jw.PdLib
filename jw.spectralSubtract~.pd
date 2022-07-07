@@ -1,0 +1,37 @@
+#N canvas 495 25 855 602 12;
+#X obj 435 151 cnv 10 155 11 empty empty sig1 0 2 0 8 #e0e0e0 #404040
+0;
+#X obj 436 196 cnv 10 154 11 empty empty xConv\ out~ 0 2 0 8 #e0e0e0
+#404040 0;
+#X obj 435 160 cnv 15 155 15 empty empty spectralSubtract 10 6 0 14
+#e0e0e0 #404040 0;
+#X msg 877 365;
+#X obj 45 157 inlet~;
+#X obj 96 157 inlet~;
+#X obj 45 243 outlet~;
+#X obj 459 84 inlet;
+#X obj 483 151 cnv 10 46 11 empty empty sig2 0 2 0 8 #e0e0e0 #404040
+0;
+#X obj 566 151 cnv 10 22 11 empty empty comp2 0 2 0 8 #e0e0e0 #404040
+0;
+#X text 38 35 Takes 2 args: Window Size \, No. Overlaps;
+#X obj 446 41 jw.createHanning~ 1024 \$0;
+#X obj 45 203 jw.fftSubtract~ \$0 \$1 \$2;
+#X floatatom 510 175 5 0 0 0 - #0-setComp1 #0-comp1, f 5;
+#X floatatom 552 175 5 0 0 0 - #0-setComp2 #0-comp2, f 5;
+#X text 435 175 Compress;
+#X obj 459 110 s \$0-setComp1;
+#X obj 559 82 inlet;
+#X obj 559 108 s \$0-setComp2;
+#X obj 239 157 r \$0-comp2;
+#X obj 155 157 r \$0-comp1;
+#X obj 528 151 cnv 10 32 11 empty empty comp1 0 2 0 8 #e0e0e0 #404040
+0;
+#X connect 4 0 12 0;
+#X connect 5 0 12 1;
+#X connect 7 0 16 0;
+#X connect 12 0 6 0;
+#X connect 17 0 18 0;
+#X connect 19 0 12 3;
+#X connect 20 0 12 2;
+#X coords 0 -1 1 1 161 63 2 432 148;

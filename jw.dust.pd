@@ -30,6 +30,7 @@
 #X obj 220 181 r \$0-min;
 #X obj 286 182 r \$0-max;
 #X obj 146 149 r \$0-exp;
+#X obj 98 14 jw.seedByPatchID;
 #X connect 0 0 4 0;
 #X connect 0 0 14 0;
 #X connect 1 0 0 0;
@@ -52,3 +53,4 @@
 #X connect 28 0 12 3;
 #X connect 29 0 12 4;
 #X connect 30 0 13 1;
+#X connect 31 0 14 0;
