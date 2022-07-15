@@ -1,6 +1,6 @@
-#N canvas 368 -1005 672 571 12;
-#N canvas 0 0 450 300 (subpatch) 0;
-#X array \$0-hann 1024 float 0;
+#N canvas 1097 -1048 672 512 12;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-hann 1024 float 0 black black;
 #X coords 0 1 1023 0 300 100 1;
 #X restore 110 394 graph;
 #X obj 327 184 osc~;
@@ -26,7 +26,6 @@
 constants window-hz (fundamental frequency of analysis) \, window-sec
 and window-msec (analysis window size in seconds and msec)., f 56
 ;
-#X msg 541 217;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;

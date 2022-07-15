@@ -1,0 +1,6 @@
+#N canvas 495 25 450 300 12;
+#X obj 97 27 loadbang;
+#X obj 97 79 outlet;
+#X obj 97 53 symbol \$1;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;

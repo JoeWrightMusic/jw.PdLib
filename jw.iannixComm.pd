@@ -1,4 +1,4 @@
-#N canvas 483 104 1230 766.031 12;
+#N canvas 81 70 1230 766.031 12;
 #X obj 94 419 f;
 #X floatatom 209 79 5 0 0 0 - - #0-inPort, f 5;
 #X obj 139 382 r \$0-inPort;
@@ -11,7 +11,7 @@
 #X obj 169 536 print OSC;
 #X obj 127 563 outlet;
 #X obj 104 103 tgl 19 0 \$0-debug empty empty 17 7 0 10 #fcfcfc #000000
-#000000 1 1;
+#000000 0 1;
 #X text 51 80 connect;
 #X text 65 102 debug;
 #X text 125 79 from Iannix;
@@ -41,14 +41,19 @@
 #404040 0;
 #X obj 63 563 s inxOSC;
 #X obj 603 276 r inxSendMsg;
-#X obj 310 30 loadnum \$3;
-#X obj 279 55 loadnum \$2;
-#X obj 103 -2 loadnum \$1;
 #X text 465 23 ARGUMENTS;
 #X text 466 49 1 - autostart connections 0/1;
 #X text 466 78 2 - receive port from Iannix;
 #X text 466 107 3 - send port to Iannix;
 #X obj 103 27 del 100;
+#X obj 883 481 route list;
+#X obj 883 457 r inxOSC;
+#X obj 843 539 s inxCursors;
+#X obj 934 540 outlet;
+#X obj 883 505 route cursor;
+#X obj 103 -2 jw.loadnum \$1;
+#X obj 310 30 jw.loadnum \$3;
+#X obj 279 55 jw.loadnum \$2;
 #X connect 0 0 18 0;
 #X connect 2 0 0 1;
 #X connect 4 0 5 0;
@@ -80,8 +85,12 @@
 #X connect 34 0 35 0;
 #X connect 35 0 19 0;
 #X connect 38 0 26 0;
-#X connect 39 0 15 0;
-#X connect 40 0 1 0;
-#X connect 41 0 46 0;
-#X connect 46 0 3 0;
+#X connect 43 0 3 0;
+#X connect 44 0 48 0;
+#X connect 45 0 44 0;
+#X connect 48 0 46 0;
+#X connect 48 0 47 0;
+#X connect 49 0 43 0;
+#X connect 50 0 15 0;
+#X connect 51 0 1 0;
 #X coords 0 -1 1 1 207 72 2 45 53;

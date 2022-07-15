@@ -3,7 +3,7 @@
 #X obj 197 373 *~;
 #X obj 197 414 *~;
 #X obj 197 463 clip~ -1 1;
-#X obj 58 31 hsl 194 20 0.01 1.01 1 0 \$0-volume \$0-setVolume VOLUME
+#X obj 58 31 hsl 194 20 0.01 1.01 1 0 \$0-volume \$0-setVolume empty
 69 8 0 15 #ffffff #000000 #000000 0 1;
 #X obj 335 252 r \$0-volume;
 #X obj 335 274 - 0.01;
