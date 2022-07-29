@@ -3,7 +3,7 @@
 0;
 #X obj 436 196 cnv 10 154 11 empty empty xConv\ out~ 0 2 0 8 #e0e0e0
 #404040 0;
-#X obj 435 160 cnv 15 155 15 empty empty spectralSubtract 10 6 0 14
+#X obj 435 160 cnv 15 155 15 empty empty Spectral\ Subtract 8 6 0 14
 #e0e0e0 #404040 0;
 #X msg 877 365;
 #X obj 45 157 inlet~;

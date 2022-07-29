@@ -10,9 +10,7 @@
 #X obj 65 98 inlet~;
 #X obj 14 216 outlet~;
 #X obj 525 72 inlet;
-#X obj 472 124 cnv 10 46 11 empty empty sig2 0 2 0 8 #e0e0e0 #404040
-0;
-#X obj 535 124 cnv 10 22 11 empty empty comp 0 2 0 8 #e0e0e0 #404040
+#X obj 450 124 cnv 10 46 11 empty empty sig2 0 2 0 8 #e0e0e0 #404040
 0;
 #X obj 14 176 jw.fftXconv~ \$0 \$1 \$2;
 #X text 7 8 Takes 2 args: Window Size \, No. Overlaps;
@@ -26,21 +24,25 @@
 #X obj 617 97 s \$0-setMags;
 #X obj 198 125 r \$0-amps;
 #X obj 277 127 r \$0-mags;
-#X obj 410 58 loadnum 1;
-#X obj 401 34 loadnum 0;
 #X obj 14 130 jw.xFade~;
 #X obj 87 129 jw.xFade~;
-#X connect 4 0 22 0;
-#X connect 4 0 23 0;
-#X connect 5 0 22 1;
-#X connect 5 0 23 1;
-#X connect 7 0 16 0;
-#X connect 10 0 6 0;
-#X connect 13 0 17 0;
-#X connect 18 0 22 2;
-#X connect 19 0 23 2;
-#X connect 20 0 15 0;
-#X connect 21 0 14 0;
-#X connect 22 0 10 0;
-#X connect 23 0 10 1;
+#X obj 401 34 jw.loadnum 0;
+#X obj 410 58 jw.loadnum 1;
+#X obj 500 124 cnv 10 46 11 empty empty amps 0 2 0 8 #e0e0e0 #404040
+0;
+#X obj 535 124 cnv 10 22 11 empty empty mags 0 2 0 8 #e0e0e0 #404040
+0;
+#X connect 4 0 19 0;
+#X connect 4 0 20 0;
+#X connect 5 0 19 1;
+#X connect 5 0 20 1;
+#X connect 7 0 15 0;
+#X connect 9 0 6 0;
+#X connect 12 0 16 0;
+#X connect 17 0 19 2;
+#X connect 18 0 20 2;
+#X connect 19 0 9 0;
+#X connect 20 0 9 1;
+#X connect 21 0 13 0;
+#X connect 22 0 14 0;
 #X coords 0 -1 1 1 159 77 2 402 122;
