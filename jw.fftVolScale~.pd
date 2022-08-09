@@ -15,7 +15,7 @@
 #X obj 136 157 *~;
 #X obj 227 134 expr 0.001*$f1*$f1;
 #X obj 228 111 inlet;
-#X obj 299 74 loadnum 1;
+#X obj 299 74 jw.loadnum 1;
 #X connect 0 0 2 1;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
