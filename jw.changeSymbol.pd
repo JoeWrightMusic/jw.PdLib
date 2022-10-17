@@ -1,0 +1,11 @@
+#N canvas 295 320 450 300 12;
+#X obj 115 77 symbol;
+#X obj 115 101 t s s;
+#X obj 41 152 select file;
+#X obj 115 176 outlet;
+#X obj 115 51 inlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 1;
+#X connect 1 1 2 0;
+#X connect 2 1 3 0;
+#X connect 4 0 0 0;

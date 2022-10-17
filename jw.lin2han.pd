@@ -1,0 +1,12 @@
+#N canvas 446 260 255 300 12;
+#X obj 29 25 inlet;
+#X obj 29 50 clip 0 1;
+#X obj 28 148 outlet;
+#X obj 29 98 * -0.5;
+#X obj 28 120 + 0.5;
+#X obj 29 74 expr cos($f1*3.14159);
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 5 0 3 0;

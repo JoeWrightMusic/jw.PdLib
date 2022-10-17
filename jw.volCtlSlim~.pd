@@ -1,4 +1,4 @@
-#N canvas 49 25 725 541.125 12;
+#N canvas 49 25 725 541 12;
 #X obj 176 233 inlet~;
 #X obj 197 373 *~;
 #X obj 197 414 *~;
@@ -9,7 +9,7 @@
 #X obj 335 274 - 0.01;
 #X msg 335 296 \$1 10;
 #X obj 335 317 line~;
-#X obj 36 31 tgl 20 0 \$0-mute \$0-setMute MUTE 1 9 0 7 #ffffff #000000
+#X obj 36 31 tgl 20 0 \$0-mute \$0-setMute MUTE 2 11 0 7 #ffffff #000000
 #000000 0 1;
 #X msg 454 350 \$1 10;
 #X obj 454 371 line~;
@@ -25,7 +25,7 @@
 #X obj 458 80 inlet;
 #X text 326 56 volume 0-1;
 #X text 455 56 mute 0/1 mute==1;
-#X obj 327 108 s \$0-setVolume;
+#X obj 327 133 s \$0-setVolume;
 #X obj 458 182 s \$0-setMute;
 #X obj 458 102 sel 0;
 #X msg 458 126 0;
@@ -42,6 +42,7 @@
 #X text 243 210 signal in;
 #X obj 316 517 outlet~;
 #X obj 376 517 outlet~;
+#X obj 327 109 + 0.01;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -61,7 +62,7 @@
 #X connect 15 0 14 0;
 #X connect 16 0 17 0;
 #X connect 17 0 13 0;
-#X connect 20 0 24 0;
+#X connect 20 0 41 0;
 #X connect 21 0 26 0;
 #X connect 26 0 27 0;
 #X connect 26 1 28 0;
@@ -75,4 +76,5 @@
 #X connect 35 0 36 0;
 #X connect 36 0 40 0;
 #X connect 37 0 34 0;
+#X connect 41 0 24 0;
 #X coords 0 -1 1 1 225 24 2 34 29;

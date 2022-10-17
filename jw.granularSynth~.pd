@@ -4,8 +4,8 @@
 #X obj 51 312 tgl 15 0 \$0-dustTog \$0-dustTogUI empty 17 7 0 10 #fcfcfc
 #000000 #000000 0 1;
 #X text 68 286 metro;
-#X floatatom 110 286 8 0 1e+07 0 - #0-metroMsUI #0-metroMs, f 8;
-#X floatatom 86 333 8 0 0 0 - #0-dustMinUI #0-dustMin, f 8;
+#X floatatom 110 286 8 0 1e+07 0 - \$0-metroMsUI \$0-metroMs 0;
+#X floatatom 86 333 8 0 0 0 - \$0-dustMinUI \$0-dustMin 0;
 #X obj 51 380 bng 15 250 50 0 \$0-oneShot \$0-oneShotUI empty 17 7
 0 10 #fcfcfc #000000 #000000;
 #X text 68 377 one shot;
@@ -14,11 +14,11 @@
 #X text 68 309 dust;
 #X obj 60 104 inlet;
 #X text 51 332 min:;
-#X floatatom 86 355 8 0 0 0 - #0-dustMaxUI #0-dustMax, f 8;
+#X floatatom 86 355 8 0 0 0 - \$0-dustMaxUI \$0-dustMax 0;
 #X text 147 355 ms;
 #X text 51 354 max:;
 #X text 170 333 exp;
-#X floatatom 197 333 5 0 0 0 - #0-dustExpUI #0-dustExp, f 5;
+#X floatatom 197 333 5 0 0 0 - \$0-dustExpUI \$0-dustExp 0;
 #X obj 50 261 cnv 15 189 22 empty empty Triggers 5 8 0 14 #e0e0e0 #404040
 0;
 #N canvas 160 22 800 470 handleTrigParams 0;
@@ -100,16 +100,15 @@
 #X connect 15 0 10 0;
 #X restore 60 129 pd handleTrigInputs;
 #X obj 201 104 inlet;
-#X obj 245 261 cnv 15 184 22 empty empty Start\ Position 5 8 0 14 #e0e0e0
-#404040 0;
-#X floatatom 306 286 6 0 0 0 - #0-posLoopHzUI #0-posLoopHz, f 6;
+#X obj 245 261 cnv 15 184 22 empty empty Start\\\ Position 5 8 0 14
+#e0e0e0 #404040 0;
+#X floatatom 306 286 6 0 0 0 - \$0-posLoopHzUI \$0-posLoopHz 0;
 #X text 352 286 (Hz);
-#X floatatom 361 310 6 0 0 0 - #0-posSweepMsUI #0-posSweepMs, f 6
+#X floatatom 361 310 6 0 0 0 - \$0-posSweepMsUI \$0-posSweepMs 0;
+#X floatatom 361 334 6 0 0 0 - \$0-posSweepPosUI \$0-posSweepPos 0
 ;
-#X floatatom 361 334 6 0 0 0 - #0-posSweepPosUI #0-posSweepPos, f
-6;
-#X obj 435 261 cnv 15 189 22 empty empty Grain\ Duration 5 8 0 14 #e0e0e0
-#404040 0;
+#X obj 435 261 cnv 15 189 22 empty empty Grain\\\ Duration 5 8 0 14
+#e0e0e0 #404040 0;
 #X text 262 286 loop:;
 #X text 262 310 random sweep:;
 #X text 244 333 set fixed pos:;
@@ -191,20 +190,17 @@
 #X connect 18 0 19 0;
 #X connect 18 0 20 0;
 #X restore 79 478 pd handlePosParams;
-#X floatatom 470 310 8 0 0 0 - #0-durRandMinUI #0-durRandMin, f 8
-;
+#X floatatom 470 310 8 0 0 0 - \$0-durRandMinUI \$0-durRandMin 0;
 #X text 531 310 ms;
 #X text 435 309 min:;
-#X floatatom 470 332 8 0 0 0 - #0-durRandMaxUI #0-durRandMax, f 8
-;
+#X floatatom 470 332 8 0 0 0 - \$0-durRandMaxUI \$0-durRandMax 0;
 #X text 531 332 ms;
 #X text 435 331 max:;
 #X text 554 310 exp;
-#X floatatom 581 310 5 0 0 0 - #0-durRandExpUI #0-durRandExp, f 5
-;
+#X floatatom 581 310 5 0 0 0 - \$0-durRandExpUI \$0-durRandExp 0;
 #X obj 435 289 tgl 15 0 \$0-durRandTog \$0-durRandTogUI empty 17 7
 0 10 #fcfcfc #000000 #000000 0 1;
-#X floatatom 552 355 6 0 0 0 - #0-fixedDurUI #0-fixedDur, f 6;
+#X floatatom 552 355 6 0 0 0 - \$0-fixedDurUI \$0-fixedDur 0;
 #X text 452 286 randomise;
 #X obj 336 104 inlet;
 #N canvas 0 22 450 300 handleDurParams 0;
@@ -234,24 +230,19 @@
 #X connect 9 0 7 0;
 #X restore 112 500 pd handleDurParams;
 #X obj 566 104 inlet;
-#X obj 245 386 cnv 15 184 22 empty empty Grain\ Speed 5 8 0 14 #e0e0e0
+#X obj 245 386 cnv 15 184 22 empty empty Grain\\\ Speed 5 8 0 14 #e0e0e0
 #404040 0;
-#X floatatom 289 411 6 0 0 0 - #0-speedUI #0-speed, f 6;
+#X floatatom 289 411 6 0 0 0 - \$0-speedUI \$0-speed 0;
 #X text 245 411 speed:;
 #X obj 629 261 cnv 15 189 22 empty empty Pan 5 8 0 14 #e0e0e0 #404040
 0;
-#X floatatom 665 310 8 0 1 0 - #0-panRandMinUI #0-panRandMin, f 8
-;
+#X floatatom 665 310 8 0 1 0 - \$0-panRandMinUI \$0-panRandMin 0;
 #X text 630 309 min:;
-#X floatatom 665 332 8 0 1 0 - #0-panRandMaxUI #0-panRandMax, f 8
-;
+#X floatatom 665 332 8 0 1 0 - \$0-panRandMaxUI \$0-panRandMax 0;
 #X text 630 331 max:;
-#X text 749 310 exp;
-#X floatatom 776 310 5 0 0 0 - #0-panRandExpUI #0-panRandExp, f 5
-;
 #X obj 630 289 tgl 15 0 \$0-panRandTog \$0-panRandTogUI empty 17 7
 0 10 #fcfcfc #000000 #000000 0 1;
-#X floatatom 747 355 6 0 0 0 - #0-fixedPanUI #0-fixedPan, f 6;
+#X floatatom 747 355 6 0 0 0 - \$0-fixedPanUI \$0-fixedPan 0;
 #X text 630 354 set fixed pos:;
 #X text 647 286 randomise;
 #N canvas 495 25 450 300 handleDurInputs 0;
@@ -283,63 +274,57 @@
 #X restore 335 129 pd handleDurInputs;
 #N canvas 495 25 450 300 hanldlePanInputs 0;
 #X obj 40 80 route randRange, f 31;
-#X obj 40 109 unpack 0 0 0 0;
 #X obj 40 142 s \$0-panRandTogUI;
 #X obj 63 166 s \$0-panRandMinUI;
 #X obj 79 192 s \$0-panRandMaxUI;
-#X obj 101 218 s \$0-panRandExpUI;
 #X obj 155 109 s \$0-fixedPanUI;
 #X obj 13 26 inlet;
 #X obj 282 79 jw.loadnum 0.5;
 #X obj 254 140 jw.loadnum 0;
 #X obj 255 169 jw.loadnum 1;
-#X connect 0 0 1 0;
-#X connect 0 1 6 0;
-#X connect 1 0 2 0;
-#X connect 1 1 3 0;
-#X connect 1 2 4 0;
-#X connect 1 3 5 0;
-#X connect 7 0 0 0;
-#X connect 8 0 6 0;
-#X connect 9 0 2 0;
-#X connect 9 0 3 0;
-#X connect 10 0 4 0;
-#X connect 10 0 5 0;
+#X obj 40 109 unpack 0 0 0;
+#X connect 0 0 9 0;
+#X connect 0 1 4 0;
+#X connect 5 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 1 0;
+#X connect 7 0 2 0;
+#X connect 8 0 3 0;
+#X connect 9 0 1 0;
+#X connect 9 1 2 0;
+#X connect 9 2 3 0;
 #X restore 566 129 pd hanldlePanInputs;
 #X obj 472 104 inlet;
 #X obj 472 129 s \$0-speedUI;
-#N canvas 0 22 450 300 handlePanParams 0;
+#N canvas 382 407 450 300 handlePanParams 0;
 #X obj 269 190 t 0;
-#X msg 40 229 randRange \$1 \$2 \$3 \$4;
 #X obj 50 175 t b;
-#X obj 40 204 pack 0 10 100 1;
 #X obj 221 269 outlet;
 #X obj 42 80 r \$0-panRandTog;
 #X obj 65 104 r \$0-panRandMin;
 #X obj 81 130 r \$0-panRandMax;
-#X obj 103 156 r \$0-panRandExp;
 #X obj 269 219 s \$0-panRandTogUI;
 #X obj 221 155 r \$0-fixedPan;
-#X connect 0 0 9 0;
-#X connect 1 0 4 0;
-#X connect 2 0 3 0;
-#X connect 3 0 1 0;
-#X connect 5 0 3 0;
-#X connect 6 0 2 0;
-#X connect 6 0 3 1;
+#X obj 40 204 pack 0 10 100;
+#X msg 40 229 randRange \$1 \$2 \$3;
+#X connect 0 0 6 0;
+#X connect 1 0 8 0;
+#X connect 3 0 8 0;
+#X connect 4 0 1 0;
+#X connect 4 0 8 1;
+#X connect 5 0 1 0;
+#X connect 5 0 8 2;
+#X connect 7 0 0 0;
 #X connect 7 0 2 0;
-#X connect 7 0 3 2;
-#X connect 8 0 2 0;
-#X connect 8 0 3 3;
-#X connect 10 0 0 0;
-#X connect 10 0 4 0;
+#X connect 8 0 9 0;
+#X connect 9 0 2 0;
 #X restore 179 547 pd handlePanParams;
 #X obj 147 524 r \$0-speed;
-#X obj 436 386 cnv 15 184 22 empty empty Window\ Type 5 8 0 14 #e0e0e0
+#X obj 436 386 cnv 15 184 22 empty empty Window\\\ Type 5 8 0 14 #e0e0e0
 #404040 0;
 #X text 436 411 short fade;
 #X obj 513 414 tgl 15 0 \$0-winFd \$0-winFdUI empty 17 7 0 10 #fcfcfc
-#000000 #000000 1 1;
+#000000 #000000 0 1;
 #X obj 561 413 tgl 15 0 \$0-sinFd \$0-sinFdUI empty 17 7 0 10 #fcfcfc
 #000000 #000000 0 1;
 #X text 533 411 sin;
@@ -405,30 +390,31 @@
 #X obj 465 81 jw.loadnum 1;
 #X obj 828 104 jw.loadnum 0;
 #X obj 428 435 nbx 4 8 -1e+37 1e+37 0 0 \$0-nothing \$0-buf buf: -20
-3 0 8 #fcfcfc #000000 #000000 0 256 0;
+3 0 8 #fcfcfc #000000 #000000 0 256;
+#X text 749 310;
 #X connect 10 0 19 0;
-#X connect 18 0 93 0;
-#X connect 18 0 100 0;
+#X connect 18 0 91 0;
+#X connect 18 0 98 0;
 #X connect 20 0 33 0;
-#X connect 34 0 100 1;
-#X connect 46 0 63 0;
-#X connect 47 0 100 2;
-#X connect 48 0 64 0;
-#X connect 65 0 66 0;
-#X connect 67 0 100 4;
-#X connect 68 0 100 3;
-#X connect 74 0 75 0;
-#X connect 76 0 100 5;
-#X connect 77 0 78 0;
-#X connect 78 0 79 0;
-#X connect 78 1 80 0;
-#X connect 79 0 81 0;
-#X connect 80 0 82 0;
-#X connect 83 0 100 6;
+#X connect 34 0 98 1;
+#X connect 46 0 61 0;
+#X connect 47 0 98 2;
+#X connect 48 0 62 0;
+#X connect 63 0 64 0;
+#X connect 65 0 98 4;
+#X connect 66 0 98 3;
+#X connect 72 0 73 0;
+#X connect 74 0 98 5;
+#X connect 75 0 76 0;
+#X connect 76 0 77 0;
+#X connect 76 1 78 0;
+#X connect 77 0 79 0;
+#X connect 78 0 80 0;
+#X connect 81 0 98 6;
+#X connect 93 0 94 0;
 #X connect 95 0 96 0;
-#X connect 97 0 98 0;
-#X connect 100 0 95 0;
-#X connect 100 1 97 0;
-#X connect 101 0 66 0;
-#X connect 102 0 78 0;
+#X connect 98 0 93 0;
+#X connect 98 1 95 0;
+#X connect 99 0 64 0;
+#X connect 100 0 76 0;
 #X coords 0 -1 1 1 773 203 2 47 244;

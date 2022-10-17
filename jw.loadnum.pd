@@ -1,9 +1,15 @@
-#N canvas 495 25 450 300 12;
-#X obj 40 50 loadbang;
-#X obj 40 111 f \$1;
-#X obj 39 138 outlet;
-#X obj 40 77 del \$2;
-#X text 91 77 < optional delay;
+#N canvas 495 25 593 380 12;
+#X obj 70 60 loadbang;
+#X obj 70 121 f \$1;
+#X obj 69 148 outlet;
+#X obj 70 87 del \$2;
+#X text 121 87 < optional delay;
+#X obj 28 60 inlet;
+#X obj 132 3 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 3 0 1 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X coords 0 -1 1 1 150 20 1 0 0;
