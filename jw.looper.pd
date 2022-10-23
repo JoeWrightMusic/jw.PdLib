@@ -1,8 +1,8 @@
-#N canvas 0 25 1440 847 12;
+#N canvas 404 49 1440 847 12;
 #X obj 245 142 hsl 128 15 0 1 0 1 \$0-sStart \$0-setsStart start 48
 8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 245 161 hsl 128 15 0 1 0 1 \$0-sEnd \$0-setsEnd end 53 8 0 10
-#fcfcfc #000000 #000000 4900 1;
+#fcfcfc #000000 #000000 12700 1;
 #X floatatom 162 121 5 0 0 0 - \$0-setSpeed \$0-speed 0;
 #X text 198 122 speed;
 #X obj 106 121 tgl 18 0 \$0-loop \$0-setLoop empty 17 7 0 10 #fcfcfc
