@@ -1,4 +1,4 @@
-#N canvas 123 125 875 714 12;
+#N canvas 683 -881 875 714 12;
 #X obj 254 468 pipe 50;
 #X obj 254 490 pack f 0;
 #X obj 186 515 unpack;
@@ -27,7 +27,7 @@
 #X obj 470 57 inlet;
 #X obj 470 81 s \$0-mute;
 #X obj 189 202 r \$0-mute;
-#X obj 568 118 s \$0-warp;
+#X obj 553 106 s \$0-warp;
 #X obj 659 55 inlet;
 #X obj 659 79 s \$0-centre;
 #X obj 216 273 r \$0-centre;

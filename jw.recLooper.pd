@@ -137,7 +137,6 @@
 #X obj 240 273 route bufID bufSR;
 #X floatatom 240 297 5 0 0 0 - - - 0;
 #X floatatom 304 302 5 0 0 0 - - - 0;
-#X obj 146 952 jw.scope~;
 #X connect 6 0 18 0;
 #X connect 8 0 7 0;
 #X connect 9 0 8 0;
@@ -207,7 +206,6 @@
 #X connect 62 0 59 0;
 #X connect 64 0 70 0;
 #X connect 67 0 35 0;
-#X connect 67 0 128 0;
 #X connect 68 0 69 1;
 #X connect 69 0 24 1;
 #X connect 70 0 75 0;

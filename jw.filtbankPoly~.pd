@@ -1,4 +1,4 @@
-#N canvas 335 162 917 710 12;
+#N canvas 199 75 917 710 12;
 #X obj 174 468 pipe 50;
 #X obj 174 490 pack f 0;
 #X obj 106 515 unpack;
@@ -53,6 +53,7 @@
 #X obj 767 82 s \$0-Q;
 #X obj 264 565 r \$0-Q;
 #X msg 264 589 all \$1;
+#X obj 404 106 switch~;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 9 0;
@@ -82,6 +83,7 @@
 #X connect 24 0 40 0;
 #X connect 26 0 15 1;
 #X connect 27 0 28 0;
+#X connect 27 0 54 0;
 #X connect 29 0 17 1;
 #X connect 31 0 32 0;
 #X connect 33 0 23 1;
