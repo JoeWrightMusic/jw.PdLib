@@ -1,18 +1,15 @@
 #N canvas 505 124 330 526 12;
 #X text 6 35 list devices;
-#X obj 148 37 bng 15 250 50 0 \$0-listDevs empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#X obj 148 37 bng 15 250 50 0 \$0-listDevs empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 6 57 selected device;
-#X floatatom 148 57 5 0 0 0 - - #0-selDev, f 5;
+#X floatatom 148 57 5 0 0 0 - - \$0-selDev 0;
 #X text 6 79 connect device, f 19;
-#X obj 148 81 tgl 15 0 \$0-conDev empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 148 81 tgl 15 0 \$0-conDev empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 173 160 r \$0-selDev;
 #X obj 4 114 r \$0-listDevs;
 #X obj 104 114 r \$0-conDev;
-#X obj 4 311 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
-#X obj 4 412 list trim;
+#X obj 4 311 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 5 410 list trim;
 #X obj 85 331 list prepend;
 #X obj 166 305 t l, f 5;
 #X obj 4 364 list append, f 12;
@@ -24,15 +21,16 @@
 #X obj 155 184 f;
 #X msg 104 183 close;
 #X msg 155 211 open \$1;
-#X obj 6 5 cnv 15 179 27 empty empty arduino-serial 20 12 0 14 #e0e0e0
-#404040 0;
+#X obj 6 5 cnv 15 179 27 empty empty arduino-serial 20 12 0 14 #e0e0e0 #404040 0;
 #X obj 104 139 sel 0 1;
+#X obj 84 439 print;
 #X connect 6 0 19 1;
 #X connect 7 0 17 0;
 #X connect 8 0 23 0;
 #X connect 9 0 11 1;
 #X connect 9 0 13 0;
 #X connect 10 0 18 0;
+#X connect 10 0 24 0;
 #X connect 11 0 13 1;
 #X connect 11 0 12 0;
 #X connect 12 0 11 1;
@@ -48,4 +46,3 @@
 #X connect 23 0 20 0;
 #X connect 23 1 19 0;
 #X coords 0 -1 1 1 190 104 2 0 0;
-#X scroll 1;
